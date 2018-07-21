@@ -1,0 +1,44 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[StLinkDriver]
+CStepIntDis=_ 0
+LeaveTargetRunning=_ 0
+stlinkserialNo=40540687
+stlinkfoundProbes=
+[DebugChecksum]
+Checksum=-1944445929
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Count=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[Aliases]
+A0=_ "E:\PX5\new\PX5\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim.c" ""
+A1=_ "E:\PX5\new\PX5\Src\main.c" ""
+Count=2
+SuppressDialog=0
+[CallStackLog]
+Enabled=0
+[CallStackStripe]
+ShowTiming=1
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
