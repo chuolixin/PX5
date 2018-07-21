@@ -168,7 +168,7 @@ int main(void)
   Read_Flash(flash_buff,3);
   if(flash_buff[0] == 0)
   {
-    flash_buff[1] = 0;   
+    flash_buff[1] = 1;   
   }
   
     
@@ -193,8 +193,8 @@ int main(void)
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
-HAL_UART_Receive_IT(&huart1, (uint8_t *)&Usart_rx.byte, 1);
- HAL_UART_Receive_IT(&huart2, (uint8_t *)&Usart_rx.byte, 1);
+  HAL_UART_Receive_IT(&huart1, (uint8_t *)&Usart_rx.byte, 1);
+ // HAL_UART_Receive_IT(&huart2, (uint8_t *)&Usart_rx.byte, 1);
 
   /* USER CODE END 2 */
 
@@ -219,14 +219,14 @@ HAL_UART_Receive_IT(&huart1, (uint8_t *)&Usart_rx.byte, 1);
     {
       //printf("0\n");
       //HAL_TIM_Base_Start(&htim6);
-      if((currentOFF != 1)&&(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == 0)&&(HAL_GetTick()-time >= 2000))
+      if((currentOFF != 1)&&(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == 0)&&(HAL_GetTick()-time >= 1000))
       {
         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);//开机
         currentON = 1;
         printf("开机\n"); 
         
       }
-      if((currentON != 1)&&(HAL_GetTick()-time >= 5000)&&((HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == 1)))
+      if((currentON != 1)&&(HAL_GetTick()-time >= 3000)&&((HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == 1)))
       {
         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); ////强制关机
         currentOFF = 1;
