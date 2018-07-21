@@ -193,8 +193,8 @@ int main(void)
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Receive_IT(&huart1, (uint8_t *)&Usart_rx.byte, 1);
- // HAL_UART_Receive_IT(&huart2, (uint8_t *)&Usart_rx.byte, 1);
+//   HAL_UART_Receive_IT(&huart1, (uint8_t *)&Usart_rx.byte, 1);
+ HAL_UART_Receive_IT(&huart2, (uint8_t *)&Usart_rx.byte, 1);
 
   /* USER CODE END 2 */
 
