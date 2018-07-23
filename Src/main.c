@@ -174,7 +174,7 @@ int main(void)
     
   
   printf("flash: %x  %x  %x \n",flash_buff[0],flash_buff[1],flash_buff[2]);
-//  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 0);        //B（좋똑）
+  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, flash_buff[1]);        //B（좋똑）
   
   temp =(uint16_t)flash_buff[2]*flash_buff[1];
   printf("temp: %x %d \n",temp,temp);
